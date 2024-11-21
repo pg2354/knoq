@@ -1,0 +1,1017 @@
+﻿@model RelianceCustomerJourney.Models.CustomerJourney
+@*{
+    ViewBag.Title = "FreelookupView";
+}*@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Look Cancellation</title>
+    <link rel="stylesheet" href="~/Content/FreeLookupView//css/header.css" />
+    <link rel="stylesheet" href="~/Content/FreeLookupView//css/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+</head>
+<body>
+    <header class="change-header">
+        <nav class="navbar navbar-default change-header-nav">
+            <div class="mobile-top-nav">
+                <a class="mobileLogo">
+                    <picture>
+                        <source media="(min-width: 320pxMr. Policy Holder Name"
+                                srcset="~/Content/FreeLookupView/images/logo.png" />
+
+
+                        type="image/webp" />
+                        <img src="~/Content/FreeLookupView/images/logo.png"
+                             alt="Logo" />
+                    </picture>
+                </a>
+            </div>
+
+            <div class="container padng-0">
+                <div class="collapse navbar-collapse prime-navbar"
+                     id="bs-example-navbar-collapse-1">
+                    <ul class="prime-menu prime-menu-new">
+                        <li class="navbar__item--title">
+                            <a>
+                                <picture>
+                                    <source media="(min-width: 320px)"
+                                            srcset="~/Content/FreeLookupView/images/logo.png"
+                                            type="image/webp" />
+                                    <img class="nav-logo--inline"
+                                         src="~/Content/FreeLookupView/images/logo.png"
+                                         alt="Logo" />
+                                </picture>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="fullHeight">
+        <section id="screen1" class="step active">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <p>Welcome <span>@Model.CustomerName</span>,</p>
+                                    <p>
+                                        You have raised a request to avail
+                                        <span>Free Look Cancellation</span> request on your RNLIC
+                                        policy “<span>@Model.PolicyNo</span>”.
+                                    </p>
+                                    <p>
+                                        We are glad to assist you in completing the request in 3
+                                        simple steps, which will take 5 minutes of your time.
+                                    </p>
+                                </div>
+                                <div class="content-btns">
+                                    <a href="">End</a>
+                                    <a onclick="changeStep('step1')" id="proceed">Proceed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="step1" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('screen1')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <p>Dear <span>@Model.CustomerName</span>,</p>
+                                    <p>Please select the reason for free-look cancellation:</p>
+
+                                    <ol>
+                                        <li>
+                                            <input type="radio"
+                                                   name="option"
+                                                   id="option1"
+                                                   value="option1" />
+                                            <label for="option1">I do not agree with the T&C of the policy</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio"
+                                                   name="option"
+                                                   id="option2"
+                                                   value="option2" />
+                                            <label for="option2">
+                                                Any other (Please specify, Min: 5 - Max: 180
+                                                characters)
+                                            </label>
+                                            <textarea class="reason-input"
+                                                      type="text"
+                                                      id="otherText"
+                                                      name="otherText"
+                                                      minlength="5"
+                                                      maxlength="180"
+                                                      rows="3"
+                                                      cols="35"></textarea>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="content-btns">
+                                    <a onclick="changeStep('step2')" id="proceed">Proceed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="step2" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('step1')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <p>Dear <span>@Model.CustomerName</span>,</p>
+                                    <p>
+                                        Your payout will be credited to the following bank account
+                                        subject to successful validation.
+                                    </p>
+
+                                    <table class="step-table">
+                                        <tr>
+                                            <td>Bank Account no.</td>
+                                            <td>:</td>
+                                            <td>89204269898</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IFSC Code</td>
+                                            <td>:</td>
+                                            <td>RNLIC123456</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bank Name</td>
+                                            <td>:</td>
+                                            <td>Nippon Bank of Japan</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="content-btns">
+                                    <a onclick="changeStep('step3')" id="proceed">Proceed</a>
+                                    <a onclick="changeStep('step2update')" id="update">No, I wish to update</a>
+                                </div>
+
+                                <!--  proceed successful and proceed unsuccessful  Modal btns commented starts-->
+                                <!-- <div class="modal-btns">
+                                  <button
+                                    type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#pr-sc"
+                                  >
+                                    Proceed Successful
+                                  </button>
+                                  <button
+                                    type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#pr-usc"
+                                  >
+                                    Proceed Unsuccessful
+                                  </button>
+                                </div> -->
+                                <!--  proceed successful and proceed unsuccessful  Modal btns commented end-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="step2update" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('step2')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <p>Please fill the following information.</p>
+
+                                    <div class="form-wrap">
+                                        <form class="form-md">
+                                            <div class="form-group">
+                                                <input id="form_name1"
+                                                       class="form-control"
+                                                       type="text"
+                                                       required
+                                                       autocomplete="off" />
+                                                <label for="form_name1">Bank Name</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="form_name2"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder=""
+                                                       required
+                                                       autocomplete="off" />
+                                                <label for="form_name2">Account No. </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="form_name2"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder=""
+                                                       required
+                                                       autocomplete="off" />
+                                                <label for="form_name2">Re-enter Account No. </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="form_name2"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder=""
+                                                       required
+                                                       autocomplete="off" />
+                                                <label for="form_name2">IFSC Code </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="content-btns">
+                                    <a onclick="changeStep('step3')" id="proceed">Proceed</a>
+                                </div>
+
+                                <!-- modal btns commented -->
+                                <!-- <div class="modal-btns">
+                                  <button
+                                    type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#sp-pr-sc"
+                                  >
+                                    Proceed Successful
+                                  </button>
+                                  <button
+                                    type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#sp-pr-usc"
+                                  >
+                                    Proceed Unsuccessful
+                                  </button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="step3" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('step2')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <p>Dear <span>@Model.CustomerName</span>,</p>
+                                    <p>Please upload the following document:</p>
+                                    <div class="table-responsive">
+                                        <table class="step-table">
+                                            <tr>
+                                                <td>Original Policy Schedule<span>*</span></td>
+                                                <td>
+                                                    <label class="custom-file-upload">
+                                                        <input type="file" id="myfile" name="myfile" />
+                                                    </label>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PAN Card <span>*</span></td>
+                                                <td>
+                                                    <label class="custom-file-upload">
+                                                        <input type="file" id="myfile" name="myfile" />
+                                                    </label>
+                                                </td>
+                                                <td><a href="">Validate through Digilocker</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>KYC (Aadhaar/Passport/DL)<span>*</span></td>
+                                                <td>
+                                                    <label class="custom-file-upload">
+                                                        <input type="file" id="myfile" name="myfile" />
+                                                    </label>
+                                                </td>
+                                                <td><a href="">Validate through Digilocker</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Cancelled Cheque / Bank Statement (Last 3
+                                                    months)<span>*</span>
+                                                </td>
+                                                <td>
+                                                    <label class="custom-file-upload">
+                                                        <input type="file" id="myfile" name="myfile" />
+                                                    </label>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Customer Photo at Branch<span>*</span></td>
+                                                <td>
+                                                    <label class="camera-file-upload">
+                                                        <input type="file" id="myfile" name="myfile" />
+                                                    </label>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="content-mand">
+                                    <p><span>*</span> marked documents are mandatory.</p>
+                                </div>
+
+                                <div class="content-btns">
+                                    <a onclick="changeStep('screen5')" id="proceed">Proceed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen5" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('step3')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <p>Dear <span>@Model.CustomerName</span>,</p>
+                                    <p>
+                                        Free Look request on your Policy Number
+                                        (<span>XXXXX</span>) is ready to submit, please complete
+                                        OTP authentication.
+                                    </p>
+
+                                    <div class="confirm-statement">
+                                        <a onclick="changeStep('t-c')">Terms and Conditions*</a>
+                                        <p>
+                                            <input type="checkbox" />
+                                            I certify that I have read and agree to the terms and
+                                            conditions
+                                        </p>
+                                    </div>
+
+                                    <p>
+                                        OTP will be delivered to your registered mobile number
+                                        "<span>XXXXXX9876</span>"
+                                    </p>
+                                </div>
+                                <div class="otp-wrap">
+                                    <div class="otp-input-wrap">
+                                        <div class="form-wrap">
+                                            <input id="form_name1"
+                                                   class="form-control"
+                                                   type="text"
+                                                   required />
+                                            <label for="form_name1">Enter OTP</label>
+                                        </div>
+                                        <button type="button">Generate OTP</button>
+                                    </div>
+                                    <div class="resend-wrap">
+                                        <p>Didn't receive an OTP?</p>
+                                        <button class="resend-btn" type="button">
+                                            Resend OTP
+                                        </button>
+                                    </div>
+                                    <div class="content-btns">
+                                        <button type="submit" class="submit-btn">
+                                            Submit OTP
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="t-c" class="step">
+            <div class="container-fluid px-0">
+                <div class="col-8 custom-width">
+                    <form action="">
+                        <div class="step-wrap">
+                            <div class="content-wrap">
+                                <div class="content-info">
+                                    <span class="back-arrow" onclick="changeStep('screen5')">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="23"
+                                             height="12"
+                                             viewBox="0 0 23 16"
+                                             fill="none">
+                                            <path d="M22 9C22.5523 9 23 8.55228 23 8C23 7.44772 22.5523 7 22 7L22 9ZM0.292893 7.2929C-0.0976311 7.68342 -0.097631 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928933C7.68054 0.538409 7.04738 0.538409 6.65685 0.928934L0.292893 7.2929ZM22 7L1 7L1 9L22 9L22 7Z"
+                                                  fill="#172F78" />
+                                        </svg>
+                                        Back
+                                    </span>
+                                    <h2>Terms And Conditions</h2>
+                                    <ol>
+                                        <li>
+                                            In case of Freelook Cancellation, charges will be
+                                            deducted as mentioned in the terms and conditions of the
+                                            policy document.
+                                        </li>
+                                        <li>
+                                            For ULIP Products, if request is received:
+                                            <ol>
+                                                <li>
+                                                    Before 3.00 pm, NAV of date of application shall be
+                                                    applicable.
+                                                </li>
+                                                <li>
+                                                    After 3.00 pm, NAV of next working day shall be
+                                                    applicable.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            The Contract shall conclude upon payment of the
+                                            surrender money and the same shall be treated as valid
+                                            discharge for Company (RNLIC).
+                                        </li>
+                                        <li>
+                                            RNLIC shall not pay any money against surrender, partial
+                                            withdrawal, refund amount, refund of excess money or
+                                            loan amount in the form of cash.
+                                        </li>
+                                        <li>
+                                            If the electronic credit is not affected, delayed or
+                                            credited to wrong account due to incorrect or incomplete
+                                            information provided, RNLIC shall not be held liable now
+                                            or in future for such losses.
+                                        </li>
+                                        <li>
+                                            In the event the credit is not affected by your banker
+                                            for any reason, RNLIC reserves the right to make payment
+                                            through cheque/DD
+                                        </li>
+                                        <li>
+                                            All the above requisitions shall be processed as per the
+                                            terms & conditions as mentioned in the policy contract
+                                            and will be binding.
+                                        </li>
+                                        <li>
+                                            In case of submission of cancelled cheque leaf from NRE
+                                            A/C, Payment may be credited through Cheques.
+                                        </li>
+                                        <li>
+                                            Charges levied & taxes applicable will be deducted from
+                                            the Premium Amount/Fund Value as mentioned in the Terms
+                                            &amp; Conditions of the Policy Document
+                                        </li>
+                                        <li>
+                                            In order to abide by the FATCA & CRS, kindly submit a
+                                            Insurance FATCA Declaration, separately.
+                                        </li>
+                                    </ol>
+                                    <p class="specific">
+                                        Specific Terms and conditions (for Freelook Cancellation
+                                        Requests)
+                                    </p>
+
+                                    <ol start="11">
+                                        <li>
+                                            In the event of a ULIP policy, Reliance Nippon Life
+                                            Insurance Company Limited shall also be entitled to
+                                            repurchase the unit at the price of the units on the
+                                            date of cancellation over and above the charges & taxes
+                                            mentioned in point no.12 (above)
+                                        </li>
+                                        <li>No tax benefit has been availed for this policy</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- modals-commented -->
+    <!-- <section id="step-2-modals">
+      <div class="modal fade" id="pr-sc" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Successful</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h4>Penny Drop Successful</h4>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="changeStep('step3')"
+                data-bs-dismiss="modal"
+              >
+                Proceed to step 3
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="pr-usc" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Unsuccessful</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. XXXX</span>, your bank account verification could
+                not be completed due to '<span>Reason</span>', would you like to
+                validate any other bank account.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#reasons-penny"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="reasons-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Reasons For Penny Drop</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. XXXX</span>, Reasons for Penny drop :
+                <span>Reason</span>
+                If Penny Drop has failed due to Name Mismatch, customer will be
+                informed that failure is due to rejection by RNLIC.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#accept-penny"
+              >
+                Accept
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#reject-penny"
+              >
+                Reject
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="accept-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Accept</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                “Dear <span>Mr. Policy Holder</span>, your bank account
+                validation has failed due to <span>Name Mismatch</span>. Please
+                proceed with other details required for the request. RNLIC would
+                be reaching out to you within <span class="red">'Y'</span> days
+                to assist you in updating your bank account details for payout.”
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="reject-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Reject</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. Policy Holder</span>, your bank account
+                validation has failed due to <span>Reason</span>. Sorry to
+                inform you that without valid bank account details, we would not
+                be able to process the payout. Kindly contact the Customer Care
+                Executive for support regarding this issue.”
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- <section id="step2-update-modals">
+      <div class="modal fade" id="sp-pr-sc" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Successful</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h4>Penny Drop Successful</h4>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="changeStep('step3')"
+              >
+                Proceed to step 3
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="sp-pr-usc" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Unsuccessful</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. XXXX</span>, your bank account verification could
+                not be completed due to '<span>Reason</span>', would you like to
+                validate any other bank account.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#sp-reasons-penny"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="sp-reasons-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Reasons For Penny Drop</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. XXXX</span>, Reasons for Penny drop :
+                <span>Reason</span>
+                If Penny Drop has failed due to Name Mismatch, customer will be
+                informed that failure is due to rejection by RNLIC.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#sp-accept-penny"
+              >
+                Accept
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#sp-reject-penny"
+              >
+                Reject
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="sp-accept-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Accept</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                “Dear <span>Mr. Policy Holder</span>, your bank account
+                validation has failed due to <span>Name Mismatch</span>. Please
+                proceed with other details required for the request. RNLIC would
+                be reaching out to you within <span class="red">'Y'</span> days
+                to assist you in updating your bank account details for payout.”
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="sp-reject-penny"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">Reject</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. Policy Holder</span>, your bank account
+                validation has failed due to <span>Reason</span>. Sorry to
+                inform you that without valid bank account details, we would not
+                be able to process the payout. Kindly contact the Customer Care
+                Executive for support regarding this issue.”
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- <section id="submit-otp-modal-section">
+      <div
+        class="modal fade"
+        id="submit-otp-modal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content my-modal">
+            <div class="modal-header">
+              <h2 class="modal-title">OTP Submitted Successfully!</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Dear <span>Mr. XXXXX</span>,
+                <span>Free Look Cancellation</span> request on your
+                <span>RNLIC policy 1234</span> has been sent for processing. You
+                should receive the credit in your ICICI Bank a/c number
+                <span>XXXX1234</span> within <span class="red">15</span> working
+                days subject to no discrepancies noted in the documents
+                submitted by you. You will be hearing from us within
+                <span class="red">7</span> working in days in case of any
+                additional requirements to be fulfilled by you.
+              </p>
+              <p>
+                Your Request number is <span>SR 12345</span> which was received
+                on <span>DD-MMM-YYYYY</span> at
+                <span>RNLIC Branch Name</span> at
+                <span>1:23 PM</span>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                class="btn btn-secondary"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/FreeLookupView//js/main.js"></script>
+</body>
+</html>
